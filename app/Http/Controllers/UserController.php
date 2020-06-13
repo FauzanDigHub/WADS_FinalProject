@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\DB;
 use App\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Hash;
+
+use Carbon\Traits\Test;
+use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
+use App\Post;
 
 class UserController extends Controller
 {
@@ -20,28 +27,65 @@ class UserController extends Controller
     {
         $email = $request->input("email");
         $password = $request->input("password");
-        $users = User::all()->where('email',  $email)->where('password', $password);
-        $count = $users->count();
-        if ($count == 0) {
-            return Redirect::to(URL::previous())->with('message', 'Invalid  Username and or Passwords');
-        }
-        else {
-            $data = DB::table('users')
-                ->where('email', $email)->where('password', $password)
-                -> get();
-            foreach ($data as $dat) {
-                $user_id = $dat->user_id;
-                $name = $dat->name;
-                $email = $dat->email;
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+
+
+        ])->post('http://127.0.0.1:8001/api/login', [
+            "email" => $email,
+            "password" => $password,
+
+        ]); 
+        $user = json_decode($response->body(), true);
+
+        // $users = User::all()->where('email',  $email);
+        // $count = $users->count();
+        // if ($count == 0) {
+        //     return Redirect::to(URL::previous())->with('message', 'Invalid  Username and or Passwords');
+        // }
+        // else {
+        //     $data = DB::table('users')
+        //         ->where('email', $email)
+        //         -> get();
+        //     foreach($data as $data) {
+        //         $hashedpw = $data->password;
+        //     }
+
+        //     if(Hash::check($password, $hashedpw)){
+        //         $data = DB::table('users')
+        //                     // -> join('addresses','addresses.addressid','=','users.addressID')
+        //                     ->where('email',$request->input("email"))
+        //                     -> get();
+
+        //     foreach ($data as $dat) {
+        //         $user_id = $dat->user_id;
+        //         $name = $dat->name;
+        //         $email = $dat->email;
                 
-            }
-            Session::put('user_id',$user_id);
-        
-            Session::put('name',$name);
-        
-            Session::put('email',$email);
-            return view('about');
+                
+        //     }
+        $response2 = Http::withHeaders([
+            'Accept' => 'application/json',
+
+
+        ])->get('http://127.0.0.1:8001/api/getUserID', [
+            "email" => $email,
+
+        ]); 
+        $users = json_decode($response2->body(), true);
+        foreach($users as $user)
+        {
+
+            Session::put('user_id',$user['user_id']);
+            Session::put('name',$user['name']);
         }
+        
+        //     Session::put('name',$name);
+        
+        //     Session::put('email',$email);
+            return view('dashboard/form');
+        
+        
     }
 
     public function logout(Request $request) {
@@ -56,19 +100,50 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function loginindex()
     {
-        //
+        if (Session::get('user_id') == ""){
+            return view('login/login');
+        } 
+        else{
+            return Redirect::to('/dashboard');
+        }
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new USER.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function signup(Request $request)
     {
-        //
+        $name = $request->input('name');
+        $binus_ID = $request->input('binus_ID');
+        $email = $request->input('email');
+        $password = Hash::make($request->input('password'));
+
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+
+
+        ])->post('http://127.0.0.1:8001/api/signup', [
+            "name" => $name,
+            "binus_ID" => $binus_ID,
+            "email" => $email,
+            "password" => $password,
+
+        ]); 
+        $user = json_decode($response->body(), true);
+        // dump($user);
+        // User::create([
+        //     'name' => $request->input('name'),
+        //     'binus_ID' => $request->input('binus_ID'),
+        //     'email' => $request->input('email'),
+        //     'password' => Hash::make($request->input('password')),
+          
+        // ]);
+
+        return view('login/login');
     }
 
     /**

@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--<link rel="icon-head" type="image/png" href="img/LogoHome.png">-->
+    <link rel="icon" type="image/png" href="{{ asset('img/LogoHome.png')}}">
 	<title>P A S T N O T E</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="P A S T N O T E HTML Template">
 	<meta name="keywords" content="photo, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/themify-icons.css"/>
-	<link rel="stylesheet" href="css/accordion.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}"/>
+	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css')}}"/>
+	<link rel="stylesheet" href="{{ asset('css/themify-icons.css')}}"/>
+	<link rel="stylesheet" href="{{ asset('css/accordion.css')}}"/>
+	<link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css')}}"/>
 
 	<!-- Main Stylesheets -->
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="{{ asset('css/style.css')}}"/>
 
 
 	<!--[if lt IE 9]>
@@ -38,8 +38,10 @@
         
         <div class="menu-social-warp">
             <div class="menu-social">
+
+				
                 
-                <a href="/" class="ti-logo"><img src="img/LogoHome.png"></a>
+                <a href="{{ url('/') }}" class="ti-logo"><img src="{{ asset('img/LogoHome.png') }}"></a>
                         
                 <a href="https://www.facebook.com/universitasbinanusantara/" style="text-align:center;"><i class="ti-facebook container"></i></a>
                 <a href="https://twitter.com/binus_univ?lang=en" style="text-align:center;"><i class="ti-twitter-alt container"></i></a>
@@ -53,17 +55,17 @@
 			<div class="menu-close">
 				<i class="ti-arrow-left"></i>
 			</div>
-            <a href="/" class="site-logo">
-                <img src="img/FinalLogo.png" alt="">
+            <a href="{{ url('/') }}" class="site-logo">
+                <img src="{{ asset('img/FinalLogo.png') }}" alt="">
             </a>
 		</div>
 		<nav class="main-menu">
 			<ul>
-				<li><a href="/" class="active">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/gallery">Gallery</a></li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="{{ url('/') }}" class="active">Home</a></li>
+				<li><a href="{{ url('/about') }}">About</a></li>
+				<li><a href="{{ url('/gallery') }}">Gallery</a></li>
+				<li><a href="{{ url('/blog') }}">Blog</a></li>
+				<li><a href="{{ url('/contact') }}">Contact</a></li>
 			</ul>
 		</nav>
 		<div class="sm-footer">
@@ -83,15 +85,15 @@
 	@yield('container')
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="js/vendor/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/imagesloaded.pkgd.min.js"></script>
-	<script src="js/isotope.pkgd.min.js"></script>
-	<script src="js/jquery.nicescroll.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/pana-accordion.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{ asset('js/vendor/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+	<script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+	<script src="{{ asset('js/imagesloaded.pkgd.min.js')}}"></script>
+	<script src="{{ asset('js/isotope.pkgd.min.js')}}"></script>
+	<script src="{{ asset('js/jquery.nicescroll.min.js')}}"></script>
+	<script src="{{ asset('js/circle-progress.min.js') }}"></script>
+	<script src="{{ asset('js/pana-accordion.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
 
 	</body>
 </html>

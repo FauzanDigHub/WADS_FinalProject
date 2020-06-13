@@ -1,54 +1,52 @@
 @extends('layout/main')
 
 
-
 @section('container')
 
-@foreach($details as $details)
+@foreach($details -> $details)
 <!-- Blog Section end -->
 <section class="blog-details">
 	<div class="container">
 		<div class="single-blog-page">
 			<div class="blog-metas">
-				<div class="blog-meta">{{$details ['created_at']}}</div>
+				<div class="blog-meta">{{$details -> created_at}}</div>
 				<div class="blog-meta">3 Comment</div>
 			</div>
-			<h2>{{$details ['post_title']}}</h2>
+			<h2>{{$details -> post_title}}</h2>
 			<div class="blog-thumb">
-				<div class="thumb-cata">{{$details ['cat_name']}}</div>
-				<img src="{{ asset('img/post/'.$details ['img_url']) }}" alt="">
+				<div class="thumb-cata">{{$details -> cat_name}}</div>
+				<img src="img/post/{{$details -> img_url}}" alt="">
 			</div>
-			<p>{{$details ['post_description']}}</p>
+			<p>{{$details -> post_description}}</p>
 			<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
 			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p> -->
-			
 			<div class="row blog-gallery">
 				<div class="col-lg-3 p-0">
 					<div class="bg-item">
-						<img src="{{ asset('img/blog-details/1.jpg') }}" alt="">
+						<img src="img/blog-details/1.jpg" alt="">
 					</div>
 				</div>
 				<div class="col-lg-9 p-0">
 					<div class="row m-0">
 						<div class="col-lg-4 p-0">
 							<div class="bg-item">
-								<img src="{{ asset('img/blog-details/2.jpg') }}" alt="">
+								<img src="img/blog-details/2.jpg" alt="">
 							</div>
 						</div>
 						<div class="col-lg-8 p-0">
 							<div class="bg-item">
-								<img src="{{ asset('img/blog-details/3.jpg') }}" alt="">
+								<img src="img/blog-details/3.jpg" alt="">
 							</div>	
 						</div>
 						<div class="col-lg-8 p-0">
 							<div class="bg-item">
-								<img src="{{ asset('img/blog-details/4.jpg') }}" alt="">
+								<img src="img/blog-details/4.jpg" alt="">
 							</div>	
 						</div>
 						<div class="col-lg-4 p-0">
 							<div class="bg-item">
-								<img src="{{ asset('img/blog-details/5.jpg') }}" alt="">
+								<img src="img/blog-details/5.jpg" alt="">
 							</div>	
 						</div>
 					</div>
@@ -74,12 +72,12 @@
 			<div class="blog-navigation">
 				<div class="row m-0">
 					<div class="col-lg-6 p-0">
-						<a href="#" class="bn-item set-bg" data-setbg="{{ asset('img/blog-details/blog-prev.jpg') }}">
+						<a href="#" class="bn-item set-bg" data-setbg="img/blog-details/blog-prev.jpg">
 							<h4><i class="ti-arrow-left"></i> The Female Body Shape Men Find Most Attractive</h4>
 						</a>
 					</div>
 					<div class="col-lg-6 p-0">
-						<a href="#" class="bn-item bn-next set-bg" data-setbg="{{ asset('img/blog-details/blog-next.jpg') }}">
+						<a href="#" class="bn-item bn-next set-bg" data-setbg="img/blog-details/blog-next.jpg">
 							<h4><i class="ti-arrow-right"></i>Vietnam's largest art community</h4>
 						</a>
 					</div>
@@ -89,7 +87,7 @@
 				<h3 class="mb-4 pb-2">Recommended For You</h3>
 				<div class="row">
 					<div class="col-lg-4">
-						<div class="blog-item rp-item set-bg" data-setbg="{{ asset('img/blog/6.jpg') }}">
+						<div class="blog-item rp-item set-bg" data-setbg="img/blog/6.jpg">
 							<div class="bi-tag">nature</div>
 							<div class="bi-text">
 								<div class="bi-date">May 19, 2019 | 3 Comment</div>
@@ -98,7 +96,7 @@
 						</div>
 					</div>
 					<div class="col-lg-4">
-						<div class="blog-item rp-item set-bg" data-setbg="{{ asset('img/blog/4.jpg') }}">
+						<div class="blog-item rp-item set-bg" data-setbg="img/blog/4.jpg">
 							<div class="bi-tag">nature</div>
 							<div class="bi-text">
 								<div class="bi-date">May 19, 2019 | 3 Comment</div>
@@ -107,7 +105,7 @@
 						</div>
 					</div>
 					<div class="col-lg-4">
-						<div class="blog-item rp-item set-bg" data-setbg="{{ asset('img/blog/3.jpg') }}">
+						<div class="blog-item rp-item set-bg" data-setbg="img/blog/3.jpg">
 							<div class="bi-tag">nature</div>
 							<div class="bi-text">
 								<div class="bi-date">May 19, 2019 | 3 Comment</div>
@@ -121,7 +119,7 @@
 				<h3>2 Comments</h3>
 				<div class="single-comment-item first-comment">
 					<div class="sc-author">
-						<img src="{{ asset('img/blog-details/user-1.jpg') }}" alt="">
+						<img src="img/blog-details/user-1.jpg" alt="">
 					</div>
 					<div class="sc-text">
 						<span>27 Aug 2019</span>
@@ -133,7 +131,7 @@
 				</div>
 				<div class="single-comment-item reply-comment">
 					<div class="sc-author">
-						<img src="{{ asset('img/blog-details/user-2.jpg') }}" alt="">
+						<img src="img/blog-details/user-2.jpg" alt="">
 					</div>
 					<div class="sc-text">
 						<span>27 Aug 2019</span>
@@ -145,7 +143,7 @@
 				</div>
 				<div class="single-comment-item second-comment ">
 					<div class="sc-author">
-						<img src="{{ asset('img/blog-details/user-3.jpg') }}" alt="">
+						<img src="img/blog-details/user-3.jpg" alt="">
 					</div>
 					<div class="sc-text">
 						<span>27 Aug 2019</span>
