@@ -29,7 +29,7 @@ class HomeController extends Controller
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/gallerycs');
         $cs = json_decode($cs->body(), true);
-        // dump($cs);
+        
 
         $design = Http::withHeaders([
             'Accept' => 'application/json',
@@ -119,7 +119,11 @@ class HomeController extends Controller
         $cs = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/postcs');
+        
         $cs = json_decode($cs->body(), true);
+        // dump($cs);
+        // dump(count($cs));
+
         // dump($cs);
 
         $design = Http::withHeaders([
@@ -359,7 +363,19 @@ class HomeController extends Controller
         $cs1 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homecs');
+        // dump($cs1)
         $cs1 = json_decode($cs1->body(), true);
+        // dump($cs1);
+        if(count($cs1) == 0)
+        {
+            $cs1 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
+        // return count($cs1);
         // dump($cs1);
         // return $cs1['name'];
         $cs2 = Http::withHeaders([
@@ -367,61 +383,177 @@ class HomeController extends Controller
         ])->get(env('API_URL','34.101.65.128').'/api/homecs');
         $cs2 = json_decode($cs2->body(), true);
         // dump($cs2);
+        if(count($cs2) == 0)
+        {
+            $cs2 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
+
 
         $design1 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homedesign');
         $design1 = json_decode($design1->body(), true);
+        if(count($design1) == 0)
+        {
+            $design1 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $design2 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homedesign');
         $design2 = json_decode($design2->body(), true);
+        if(count($design2) == 0)
+        {
+            $design2 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
 
         $ib1 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homeib');
         $ib1 = json_decode($ib1->body(), true);
         // dump($ib1);
+        if(count($ib1) == 0)
+        {
+            $ib1 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $ib2 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homeib');
         $ib2 = json_decode($ib2->body(), true);
+        if(count($ib2) == 0)
+        {
+            $ib2 = 
 
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $bmm1 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homebmm');
         $bmm1 = json_decode($bmm1->body(), true);
+        
+        if(count($bmm1) == 0)
+        {
+            $bmm1 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $bmm2 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homebmm');
         $bmm2 = json_decode($bmm2->body(), true);
+        if(count($bmm2) == 0)
+        {
+            $bmm2 = 
 
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $fip1 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homefip');
         $fip1 = json_decode($fip1->body(), true);
+        if(count($fip1) == 0)
+        {
+            $fip1 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $fip2 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homefip');
         $fip2 = json_decode($fip2->body(), true);
+        if(count($fip2) == 0)
+        {
+            $fip2 = 
 
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $bis1 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homebis');
         $bis1 = json_decode($bis1->body(), true);
+        if(count($bis1) == 0)
+        {
+            $bis1 = 
+
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($bis1);
+
+        }
         $bis2 = Http::withHeaders([
             'Accept' => 'application/json',
         ])->get(env('API_URL','34.101.65.128').'/api/homebis');
         $bis2 = json_decode($bis2->body(), true);
+        if(count($bis2) == 0)
+        {
+            $bis2 = 
 
+                array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+            ;
+            // dump($cs1);
+
+        }
         $comm1 = Http::withHeaders([
             'Accept' => 'application/json',
             ])->get(env('API_URL','34.101.65.128').'/api/homecomm');
             $comm1 = json_decode($comm1->body(), true);
+            if(count($comm1) == 0)
+            {
+                $comm1 = 
+    
+                    array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+                ;
+                // dump($cs1);
+    
+            }
+        
         $comm2 = Http::withHeaders([
             'Accept' => 'application/json',
             ])->get(env('API_URL','34.101.65.128').'/api/homecomm');
             $comm2 = json_decode($comm2->body(), true);
+            if(count($comm2) == 0)
+            {
+                $comm2 = 
+    
+                    array('post_id' => '', 'user_id' => '', 'name' => '', 'img_url' => '', 'post_title' => '', 'post_description' => '', 'cat_name' => '')
+                ;
+                // dump($cs1);
+    
+            }
             return view('index', compact('cs1', 'cs2', 'design1', 'design2' , 'ib1' , 'ib2', 'bmm1' , 'bmm2' , 'fip1', 'fip2' , 'bis1', 'bis2' , 'comm1' , 'comm2'));
     }
 
