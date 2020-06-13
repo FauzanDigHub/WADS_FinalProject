@@ -27,38 +27,38 @@ class HomeController extends Controller
     {
         $cs = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/gallerycs');
+        ])->get(env('API_URL','34.101.65.128').'/api/gallerycs');
         $cs = json_decode($cs->body(), true);
         // dump($cs);
 
         $design = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/gallerydesign');
+        ])->get(env('API_URL','34.101.65.128').'/api/gallerydesign');
         $design = json_decode($design->body(), true);
 
         $ib = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/galleryib');
+        ])->get(env('API_URL','34.101.65.128').'/api/galleryib');
         $ib = json_decode($ib->body(), true);
 
         $bmm = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/gallerybmm');
+        ])->get(env('API_URL','34.101.65.128').'/api/gallerybmm');
         $bmm = json_decode($bmm->body(), true);
 
         $fip = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/galleryfip');
+        ])->get(env('API_URL','34.101.65.128').'/api/galleryfip');
         $fip = json_decode($fip->body(), true);
 
         $bis = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/gallerybis');
+        ])->get(env('API_URL','34.101.65.128').'/api/gallerybis');
         $bis = json_decode($bis->body(), true);
 
         $comm = Http::withHeaders([
             'Accept' => 'application/json',
-            ])->get('http://127.0.0.1:8001/api/gallerycomm');
+            ])->get(env('API_URL','34.101.65.128').'/api/gallerycomm');
             $comm = json_decode($comm->body(), true);
         // dump($design);
         return view('gallery', compact('cs', 'design', 'ib', 'bmm', 'fip', 'bis', 'comm'));
@@ -118,38 +118,38 @@ class HomeController extends Controller
     {
         $cs = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/postcs');
+        ])->get(env('API_URL','34.101.65.128').'/api/postcs');
         $cs = json_decode($cs->body(), true);
         // dump($cs);
 
         $design = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/postdesign');
+        ])->get(env('API_URL','34.101.65.128').'/api/postdesign');
         $design = json_decode($design->body(), true);
 
         $ib = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/postib');
+        ])->get(env('API_URL','34.101.65.128').'/api/postib');
         $ib = json_decode($ib->body(), true);
 
         $bmm = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/postbmm');
+        ])->get(env('API_URL','34.101.65.128').'/api/postbmm');
         $bmm = json_decode($bmm->body(), true);
 
         $fip = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/postfip');
+        ])->get(env('API_URL','34.101.65.128').'/api/postfip');
         $fip = json_decode($fip->body(), true);
 
         $bis = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/postbis');
+        ])->get(env('API_URL','34.101.65.128').'/api/postbis');
         $bis = json_decode($bis->body(), true);
 
         $comm = Http::withHeaders([
             'Accept' => 'application/json',
-            ])->get('http://127.0.0.1:8001/api/postcomm');
+            ])->get(env('API_URL','34.101.65.128').'/api/postcomm');
             $comm = json_decode($comm->body(), true);
             
         
@@ -249,38 +249,38 @@ class HomeController extends Controller
         // ->get();
         $cs = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blogcs');
+        ])->get(env('API_URL','34.101.65.128').'/api/blogcs');
         $cs = json_decode($cs->body(), true);
         // dump($cs);
 
         $design = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blogdesign');
+        ])->get(env('API_URL','34.101.65.128').'/api/blogdesign');
         $design = json_decode($design->body(), true);
 
         $ib = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blogib');
+        ])->get(env('API_URL','34.101.65.128').'/api/blogib');
         $ib = json_decode($ib->body(), true);
 
         $bmm = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blogbmm');
+        ])->get(env('API_URL','34.101.65.128').'/api/blogbmm');
         $bmm = json_decode($bmm->body(), true);
 
         $fip = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blogfip');
+        ])->get(env('API_URL','34.101.65.128').'/api/blogfip');
         $fip = json_decode($fip->body(), true);
 
         $bis = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blogbis');
+        ])->get(env('API_URL','34.101.65.128').'/api/blogbis');
         $bis = json_decode($bis->body(), true);
 
         $comm = Http::withHeaders([
             'Accept' => 'application/json',
-            ])->get('http://127.0.0.1:8001/api/blogcomm');
+            ])->get(env('API_URL','34.101.65.128').'/api/blogcomm');
             $comm = json_decode($comm->body(), true);
         return view('blog', compact('cs', 'design', 'ib', 'bmm', 'fip', 'bis', 'comm'));
     }
@@ -294,7 +294,7 @@ class HomeController extends Controller
     {
         $details = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/blog-detail/'.$post_id);
+        ])->get(env('API_URL','34.101.65.128').'/api/blog-detail/'.$post_id);
         $details = json_decode($details->body(), true);
         // dump($details);
         // $details = DB::table('posts')
@@ -358,69 +358,69 @@ class HomeController extends Controller
         //     // ->get();
         $cs1 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homecs');
+        ])->get(env('API_URL','34.101.65.128').'/api/homecs');
         $cs1 = json_decode($cs1->body(), true);
         // dump($cs1);
         // return $cs1['name'];
         $cs2 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homecs');
+        ])->get(env('API_URL','34.101.65.128').'/api/homecs');
         $cs2 = json_decode($cs2->body(), true);
         // dump($cs2);
 
         $design1 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homedesign');
+        ])->get(env('API_URL','34.101.65.128').'/api/homedesign');
         $design1 = json_decode($design1->body(), true);
         $design2 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homedesign');
+        ])->get(env('API_URL','34.101.65.128').'/api/homedesign');
         $design2 = json_decode($design2->body(), true);
 
         $ib1 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homeib');
+        ])->get(env('API_URL','34.101.65.128').'/api/homeib');
         $ib1 = json_decode($ib1->body(), true);
         // dump($ib1);
         $ib2 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homeib');
+        ])->get(env('API_URL','34.101.65.128').'/api/homeib');
         $ib2 = json_decode($ib2->body(), true);
 
         $bmm1 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homebmm');
+        ])->get(env('API_URL','34.101.65.128').'/api/homebmm');
         $bmm1 = json_decode($bmm1->body(), true);
         $bmm2 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homebmm');
+        ])->get(env('API_URL','34.101.65.128').'/api/homebmm');
         $bmm2 = json_decode($bmm2->body(), true);
 
         $fip1 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homefip');
+        ])->get(env('API_URL','34.101.65.128').'/api/homefip');
         $fip1 = json_decode($fip1->body(), true);
         $fip2 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homefip');
+        ])->get(env('API_URL','34.101.65.128').'/api/homefip');
         $fip2 = json_decode($fip2->body(), true);
 
         $bis1 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homebis');
+        ])->get(env('API_URL','34.101.65.128').'/api/homebis');
         $bis1 = json_decode($bis1->body(), true);
         $bis2 = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://127.0.0.1:8001/api/homebis');
+        ])->get(env('API_URL','34.101.65.128').'/api/homebis');
         $bis2 = json_decode($bis2->body(), true);
 
         $comm1 = Http::withHeaders([
             'Accept' => 'application/json',
-            ])->get('http://127.0.0.1:8001/api/homecomm');
+            ])->get(env('API_URL','34.101.65.128').'/api/homecomm');
             $comm1 = json_decode($comm1->body(), true);
         $comm2 = Http::withHeaders([
             'Accept' => 'application/json',
-            ])->get('http://127.0.0.1:8001/api/homecomm');
+            ])->get(env('API_URL','34.101.65.128').'/api/homecomm');
             $comm2 = json_decode($comm2->body(), true);
             return view('index', compact('cs1', 'cs2', 'design1', 'design2' , 'ib1' , 'ib2', 'bmm1' , 'bmm2' , 'fip1', 'fip2' , 'bis1', 'bis2' , 'comm1' , 'comm2'));
     }
@@ -435,7 +435,7 @@ class HomeController extends Controller
     {
         $counts = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->get('http://localhost:8001/api/getAllPost');
+        ])->get(env('API_URL','34.101.65.128').'/api/getAllPost');
         $test = json_decode($counts->body(),true);
         $count = $test['message'];
         // $user = json_decode($count->body(), true);
@@ -447,7 +447,7 @@ class HomeController extends Controller
         }
         else{
             // $post_id = DB::table('posts')->get()->last()->post_id;
-            $test = Http::get('http://localhost:8001/api/getLastID'); 
+            $test = Http::get(env('API_URL','34.101.65.128').'/api/getLastID'); 
             $post_id = json_decode($test->body(),true);
 
             $post_id += 1;
@@ -472,7 +472,7 @@ class HomeController extends Controller
             'Accept' => 'application/json',
 
 
-        ])->post('http://127.0.0.1:8001/api/createPost', [
+        ])->post(env('API_URL','34.101.65.128').'/api/createPost', [
             'user_id' => $request->session()->get('user_id'),
             'cat_id' => $request->input('major'),
             'name' => $request->input('name'),
@@ -518,7 +518,7 @@ class HomeController extends Controller
             'Accept' => 'application/json',
 
 
-        ])->get('http://127.0.0.1:8001/api/getDetailPost', [
+        ])->get(env('API_URL','34.101.65.128').'/api/getDetailPost', [
             'id' => $id
 
         ]); 
@@ -574,7 +574,7 @@ class HomeController extends Controller
                 'Accept' => 'application/json',
     
     
-            ])->get('http://127.0.0.1:8001/api/getImageUrl', [
+            ])->get(env('API_URL','34.101.65.128').'/api/getImageUrl', [
                 'id' => $request->$post_id
             ]);             
             $data = json_decode($response->body(), true);
@@ -599,7 +599,7 @@ class HomeController extends Controller
             'Accept' => 'application/json',
 
 
-        ])->patch('http://127.0.0.1:8001/api/updatePost', [
+        ])->patch(env('API_URL','34.101.65.128').'/api/updatePost', [
             'cat_id' => $request->input('major'),
             'name' => $request->input('name'),
             'img_url' => $image_url,
@@ -640,7 +640,7 @@ class HomeController extends Controller
         // // ->delete();
         $delete = Http::withHeaders([
             'Accept' => 'application/json',
-        ])->delete('http://127.0.0.1:8001/api/deletepost/'.$post_id);
+        ])->delete(env('API_URL','34.101.65.128').'/api/deletepost/'.$post_id);
         
         return Redirect::to("post");
         

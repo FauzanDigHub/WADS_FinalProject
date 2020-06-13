@@ -31,7 +31,7 @@ class UserController extends Controller
             'Accept' => 'application/json',
 
 
-        ])->post('http://127.0.0.1:8001/api/login', [
+        ])->post(env('API_URL','34.101.65.128').'/api/login', [
             "email" => $email,
             "password" => $password,
 
@@ -68,7 +68,7 @@ class UserController extends Controller
             'Accept' => 'application/json',
 
 
-        ])->get('http://127.0.0.1:8001/api/getUserID', [
+        ])->get(env('API_URL','34.101.65.128').'/api/getUserID', [
             "email" => $email,
 
         ]); 
@@ -126,7 +126,7 @@ class UserController extends Controller
             'Accept' => 'application/json',
 
 
-        ])->post('http://127.0.0.1:8001/api/signup', [
+        ])->post(env('API_URL','34.101.65.128').'/api/signup', [
             "name" => $name,
             "binus_ID" => $binus_ID,
             "email" => $email,
